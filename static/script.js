@@ -79,19 +79,61 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Waitlist form handler – simple alert to provide feedback
+  // Waitlist form handler – display confetti and toast feedback
   const waitlistForm = document.querySelector('#hero form');
+  const successToastEl = document.getElementById('waitlistToast');
+  const errorToastEl = document.getElementById('waitlistErrorToast');
+  const successToast = successToastEl ? new bootstrap.Toast(successToastEl) : null;
+  const errorToast = errorToastEl ? new bootstrap.Toast(errorToastEl) : null;
+
+  function launchConfetti() {
+    if (typeof confetti === 'undefined') return;
+    const count = 200;
+    const defaults = { origin: { y: 0.7 } };
+
+    function fire(particleRatio, opts) {
+      confetti(
+        Object.assign({}, defaults, opts, {
+          particleCount: Math.floor(count * particleRatio)
+        })
+      );
+    }
+
+    fire(0.25, {
+      spread: 26,
+      startVelocity: 55
+    });
+    fire(0.2, {
+      spread: 60
+    });
+    fire(0.35, {
+      spread: 100,
+      decay: 0.91,
+      scalar: 0.8
+    });
+    fire(0.1, {
+      spread: 120,
+      startVelocity: 25,
+      decay: 0.92,
+      scalar: 1.2
+    });
+    fire(0.1, {
+      spread: 120,
+      startVelocity: 45
+    });
+  }
+
   if (waitlistForm) {
     waitlistForm.addEventListener('submit', function (event) {
       event.preventDefault();
       const emailInput = waitlistForm.querySelector('input[type="email"]');
       const email = emailInput.value.trim();
-      if (email) {
-        // Provide feedback to the user
-        alert('Thank you! You have been added to the waitlist.');
+      if (email && emailInput.checkValidity()) {
+        launchConfetti();
+        if (successToast) successToast.show();
         emailInput.value = '';
       } else {
-        alert('Please enter a valid email address.');
+        if (errorToast) errorToast.show();
       }
     });
   }

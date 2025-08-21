@@ -22,6 +22,13 @@ body {
   padding: 0;
   overflow-x: hidden;
   background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 /* Navbar styling */
@@ -71,16 +78,35 @@ body {
 }
 
 /* Waitlist form */
-#hero form input[type="email"] {
-  max-width: 320px;
-  border-radius: 0.3rem;
-}
-
 #hero form .btn-primary {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+/* Modern waitlist styling */
+.waitlist-form {
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.waitlist-form input[type="email"],
+.waitlist-form button {
+  border-radius: 2rem;
+}
+
+.waitlist-form input[type="email"] {
+  width: 100%;
+}
+
+@media (max-width: 767.98px) {
+  .waitlist-form button {
+    width: 100%;
+  }
 }
 
 #hero .btn-outline-light {
@@ -154,4 +180,5 @@ img {
 /* Footer */
 footer {
   font-size: 0.9rem;
+  margin-top: auto;
 }

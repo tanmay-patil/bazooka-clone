@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://bazonga.com/</loc>
+    <lastmod>2025-08-23T00:00:00+00:00</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://bazonga.com/games</loc>
+    <lastmod>2025-08-23T00:00:00+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bazonga.com/poker-number</loc>
+    <lastmod>2025-08-23T00:00:00+00:00</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bazonga.com/tambola</loc>
+    <lastmod>2025-08-23T00:00:00+00:00</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bazonga.com/tap-it</loc>
+    <lastmod>2025-08-23T00:00:00+00:00</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bazonga.com/tug-of-war</loc>
+    <lastmod>2025-08-23T00:00:00+00:00</lastmod>
+    <priority>0.7</priority>
+  </url>
+</urlset>

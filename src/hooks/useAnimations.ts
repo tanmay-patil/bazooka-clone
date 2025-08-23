@@ -1,10 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 
-// Hook for particles.js initialization
+// Hook for particles.js initialization with modern async handling
 export const useParticles = (elementId: string) => {
     useEffect(() => {
-        const particleContainer = document.getElementById(elementId);
-        if (particleContainer && typeof window.particlesJS !== 'undefined') {
+        const initParticles = async () => {
+            const particleContainer = document.getElementById(elementId);
+            if (!particleContainer || typeof window.particlesJS === 'undefined') return;
+
             window.particlesJS(elementId, {
                 particles: {
                     number: {
@@ -58,14 +60,18 @@ export const useParticles = (elementId: string) => {
                 },
                 retina_detect: true
             });
-        }
+        };
+
+        initParticles();
     }, [elementId]);
 };
 
-// Hook for ScrollReveal animations
+// Hook for ScrollReveal animations with modern syntax
 export const useScrollReveal = () => {
     useEffect(() => {
-        if (typeof window.ScrollReveal !== 'undefined') {
+        const initScrollReveal = () => {
+            if (typeof window.ScrollReveal === 'undefined') return;
+
             const sr = window.ScrollReveal();
             sr.reveal('.reveal', {
                 distance: '40px',
@@ -75,48 +81,37 @@ export const useScrollReveal = () => {
                 interval: 100,
                 viewFactor: 0.2
             });
-        }
+        };
+
+        initScrollReveal();
     }, []);
 };
 
-// Hook for confetti animation
+// Hook for confetti animation with modern features
 export const useConfetti = () => {
-    const launchConfetti = () => {
+    const launchConfetti = useCallback(() => {
         if (typeof window.confetti === 'undefined') return;
+
         const count = 200;
         const defaults = { origin: { y: 0.7 } };
 
-        function fire(particleRatio: number, opts: any) {
-            window.confetti(
-                Object.assign({}, defaults, opts, {
-                    particleCount: Math.floor(count * particleRatio)
-                })
-            );
-        }
+        const fire = (particleRatio: number, opts: Record<string, any>) => {
+            window.confetti({
+                ...defaults,
+                ...opts,
+                particleCount: Math.floor(count * particleRatio)
+            });
+        };
 
-        fire(0.25, {
-            spread: 26,
-            startVelocity: 55
-        });
-        fire(0.2, {
-            spread: 60
-        });
-        fire(0.35, {
-            spread: 100,
-            decay: 0.91,
-            scalar: 0.8
-        });
-        fire(0.1, {
-            spread: 120,
-            startVelocity: 25,
-            decay: 0.92,
-            scalar: 1.2
-        });
-        fire(0.1, {
-            spread: 120,
-            startVelocity: 45
-        });
-    };
+        // Launch multiple confetti bursts using modern array methods
+        [
+            { ratio: 0.25, opts: { spread: 26, startVelocity: 55 } },
+            { ratio: 0.2, opts: { spread: 60 } },
+            { ratio: 0.35, opts: { spread: 100, decay: 0.91, scalar: 0.8 } },
+            { ratio: 0.1, opts: { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 } },
+            { ratio: 0.1, opts: { spread: 120, startVelocity: 45 } }
+        ].forEach(({ ratio, opts }) => fire(ratio, opts));
+    }, []);
 
     return { launchConfetti };
 };

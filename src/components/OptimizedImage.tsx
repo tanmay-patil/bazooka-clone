@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface OptimizedImageProps {
-    src: string; // PNG path (without extension)
+    src: string; // Base path (without extension)
     alt: string;
     className?: string;
     style?: React.CSSProperties;
@@ -15,24 +15,17 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     style,
     loading = 'lazy'
 }) => {
-    // Remove .png extension if present and add paths for both formats
-    const basePath = src.replace(/\.png$/, '');
-    const webpSrc = `${basePath}.webp`;
-    const pngSrc = `${basePath}.png`;
+    // Use WebP directly since all supported browsers have WebP support
+    const webpSrc = `${src.replace(/\.(png|jpg|jpeg)$/, '')}.webp`;
 
     return (
-        <picture>
-            {/* WebP format for supported browsers */}
-            <source srcSet={webpSrc} type="image/webp" />
-            {/* PNG fallback for older browsers */}
-            <img
-                src={pngSrc}
-                alt={alt}
-                className={className}
-                style={style}
-                loading={loading}
-            />
-        </picture>
+        <img
+            src={webpSrc}
+            alt={alt}
+            className={className}
+            style={style}
+            loading={loading}
+        />
     );
 };
 

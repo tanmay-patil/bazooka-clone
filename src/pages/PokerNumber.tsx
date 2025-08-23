@@ -7,6 +7,7 @@ const PokerNumber: React.FC = () => {
     const handleEnterRoom = () => {
         if (roomName.trim()) {
             // TODO: Implement room joining logic
+            // eslint-disable-next-line no-console
             console.log('Entering room:', roomName);
         }
     };

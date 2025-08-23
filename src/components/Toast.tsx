@@ -24,6 +24,7 @@ const Toast: React.FC<ToastProps> = ({
             }, delay);
             return () => clearTimeout(timer);
         }
+        return undefined;
     }, [show, autoHide, delay, onClose]);
 
     if (!show) return null;

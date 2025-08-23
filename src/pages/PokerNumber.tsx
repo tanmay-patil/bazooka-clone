@@ -19,10 +19,10 @@ const PokerNumber: React.FC = () => {
 
     return (
         <GameLayout
-            title="Poker Number – Game Rules & Room | Bazonga"
-            description="Review the rules for Poker Number on Bazonga and create a room to play."
+            title="Poker Number – Game Rules & Room | Bazonka"
+            description="Review the rules for Poker Number on Bazonka and create a room to play."
             ogTitle="Poker Number – Game Rules"
-            ogDescription="Read the rules for Poker Number and start a room on Bazonga."
+            ogDescription="Read the rules for Poker Number and start a room on Bazonka."
         >
             <h1 className="fw-bold text-center mb-4 text-secondary">Poker Number – Rules</h1>
             <img

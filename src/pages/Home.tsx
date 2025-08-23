@@ -31,12 +31,12 @@ const Home: React.FC = () => {
     return (
         <>
             <Helmet>
-                <title>Bazonga – Real‑time collaborative mini games platform</title>
+                <title>Bazonka – Real‑time collaborative mini games platform</title>
                 <meta
                     name="description"
-                    content="Bazonga is a real‑time, collaborative platform for playing fun mini games with friends, family or strangers – no login required and no data stored."
+                    content="Bazonka is a real‑time, collaborative platform for playing fun mini games with friends, family or strangers – no login required and no data stored."
                 />
-                <meta property="og:title" content="Bazonga – Real‑time collaborative mini games platform" />
+                <meta property="og:title" content="Bazonka – Real‑time collaborative mini games platform" />
                 <meta
                     property="og:description"
                     content="Play fun mini games with friends or strangers in real‑time."
@@ -52,12 +52,12 @@ const Home: React.FC = () => {
                         <Link className="navbar-brand d-flex align-items-center text-decoration-none" to="/">
                             <OptimizedImage
                                 src="/assets/logo_transparent"
-                                alt="Bazonga logo"
+                                alt="Bazonka logo"
                                 className="me-2"
                                 style={{ width: '48px', height: '48px' }}
                                 loading="eager"
                             />
-                            <span className="fw-bold text-primary">Bazonga</span>
+                            <span className="fw-bold text-primary">Bazonka</span>
                         </Link>
                         <button
                             className="navbar-toggler"
@@ -96,7 +96,7 @@ const Home: React.FC = () => {
                 ></div>
                 {/* Content on top of particles */}
                 <div className="container position-relative text-center text-white py-5">
-                    <h1 className="display-4 fw-bold mb-4">Bazonga</h1>
+                    <h1 className="display-4 fw-bold mb-4">Bazonka</h1>
                     <p className="lead mb-4 mx-auto" style={{ maxWidth: '37.5rem' }}>
                         A real‑time, collaborative platform for playing fun mini games
                     </p>
@@ -135,7 +135,7 @@ const Home: React.FC = () => {
 
             {/* Main content sections */}
             <main className="flex-grow-1" role="main">
-                {/* What is Bazonga */}
+                {/* What is Bazonka */}
                 <section className="py-5 bg-light" role="region">
                     <div className="container">
                         <div className="row align-items-center">
@@ -147,12 +147,12 @@ const Home: React.FC = () => {
                                 />
                             </div>
                             <div className="col-md-6">
-                                <h2 className="fw-bold mb-3 text-secondary">What is Bazonga?</h2>
+                                <h2 className="fw-bold mb-3 text-secondary">What is Bazonka?</h2>
                                 <p className="mb-3 reveal text-muted">
-                                    Bazonga is a platform for playing real‑time, collaborative
+                                    Bazonka is a platform for playing real‑time, collaborative
                                     mini games, bringing friends and strangers together across
                                     devices. Whether you're at home, commuting or hosting a
-                                    party, Bazonga delivers instant fun.
+                                    party, Bazonka delivers instant fun.
                                 </p>
                             </div>
                         </div>
@@ -168,7 +168,7 @@ const Home: React.FC = () => {
                                 <p className="mb-3 reveal text-muted">
                                     Simply connect with others to play multiplayer games instantly – no
                                     downloads or installations required. Invite your friends or join
-                                    others and start the fun in seconds. Bazonga runs right in your
+                                    others and start the fun in seconds. Bazonka runs right in your
                                     browser on mobile, tablet and desktop.
                                 </p>
                             </div>
@@ -197,7 +197,7 @@ const Home: React.FC = () => {
                             <div className="col-md-6">
                                 <h2 className="fw-bold mb-3 text-secondary">Privacy features</h2>
                                 <p className="mb-3 reveal text-muted">
-                                    Bazonga is designed with privacy in mind. No personal data is
+                                    Bazonka is designed with privacy in mind. No personal data is
                                     ever stored or tracked, and you can play anonymously without
                                     logging in. Your gaming sessions are transient and leave
                                     no footprint behind.
@@ -213,10 +213,10 @@ const Home: React.FC = () => {
                         <div className="row align-items-center flex-column-reverse flex-md-row">
                             <div className="col-md-6">
                                 <h2 className="fw-bold mb-3 text-secondary">
-                                    No Database: How Bazonga keeps things simple
+                                    No Database: How Bazonka keeps things simple
                                 </h2>
                                 <p className="mb-3 reveal text-muted">
-                                    Without using any database, Bazonga remains straightforward and
+                                    Without using any database, Bazonka remains straightforward and
                                     easy to use. Just choose your game, connect with others and
                                     start playing – no accounts, no hassles and nothing to remember.
                                 </p>
@@ -236,7 +236,7 @@ const Home: React.FC = () => {
             {/* Footer */}
             <footer className="bg-dark text-white py-4 mt-auto" role="contentinfo">
                 <div className="container text-center">
-                    <small className="text-muted">© 2025 Bazonga. All rights reserved.</small>
+                    <small className="text-muted">© 2025 Bazonka. All rights reserved.</small>
                 </div>
             </footer>
 

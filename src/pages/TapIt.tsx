@@ -19,10 +19,10 @@ const TapIt: React.FC = () => {
 
     return (
         <GameLayout
-            title="Tap It – Game Rules & Room | Bazonga"
-            description="Learn how to play Tap It on Bazonga and create a room to challenge friends."
+            title="Tap It – Game Rules & Room | Bazonka"
+            description="Learn how to play Tap It on Bazonka and create a room to challenge friends."
             ogTitle="Tap It – Game Rules"
-            ogDescription="Read the rules for Tap It and start a room on Bazonga."
+            ogDescription="Read the rules for Tap It and start a room on Bazonka."
         >
             <h1 className="fw-bold text-center mb-4 text-secondary">Tap It – Rules</h1>
             <img

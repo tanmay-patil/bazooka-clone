@@ -11,15 +11,15 @@ const Games: React.FC = () => {
     return (
         <div className="d-flex flex-column min-vh-100">
             <Helmet>
-                <title>Bazonga Games – Play mini games online</title>
+                <title>Bazonka Games – Play mini games online</title>
                 <meta
                     name="description"
-                    content="Explore the collection of fun, real‑time mini games available on Bazonga."
+                    content="Explore the collection of fun, real‑time mini games available on Bazonka."
                 />
-                <meta property="og:title" content="Bazonga Games" />
+                <meta property="og:title" content="Bazonka Games" />
                 <meta
                     property="og:description"
-                    content="Explore the collection of fun, real‑time mini games available on Bazonga."
+                    content="Explore the collection of fun, real‑time mini games available on Bazonka."
                 />
                 <meta property="og:image" content="/assets/logo_transparent.webp" />
                 <meta property="og:type" content="website" />
@@ -32,12 +32,12 @@ const Games: React.FC = () => {
                         <Link className="navbar-brand d-flex align-items-center text-decoration-none" to="/">
                             <OptimizedImage
                                 src="/assets/logo_transparent"
-                                alt="Bazonga logo"
+                                alt="Bazonka logo"
                                 className="me-2"
                                 style={{ width: '48px', height: '48px' }}
                                 loading="eager"
                             />
-                            <span className="fw-bold text-primary">Bazonga</span>
+                            <span className="fw-bold text-primary">Bazonka</span>
                         </Link>
                         <div className="d-flex">
                             <Link to="/" className="btn btn-outline-primary me-2">Home</Link>
@@ -169,7 +169,7 @@ const Games: React.FC = () => {
             {/* Footer */}
             <footer className="bg-dark text-white py-3 mt-auto" role="contentinfo">
                 <div className="container text-center">
-                    <small>© 2025 Bazonga. All rights reserved.</small>
+                    <small>© 2025 Bazonka. All rights reserved.</small>
                 </div>
             </footer>
         </div>

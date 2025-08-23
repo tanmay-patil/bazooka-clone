@@ -1,5 +1,5 @@
 /*
-  Custom JavaScript for the Bazonga website.
+  Custom JavaScript for the Bazonka website.
 
   This script initialises the particle background on the home page,
   triggers reveal animations with ScrollReveal.js and adds a simple

@@ -39,12 +39,12 @@ const GameLayout: React.FC<GameLayoutProps> = ({
                         <Link className="navbar-brand d-flex align-items-center text-decoration-none" to="/">
                             <OptimizedImage
                                 src="/assets/logo_transparent"
-                                alt="Bazonga logo"
+                                alt="Bazonka logo"
                                 className="me-2"
                                 style={{ width: '48px', height: '48px' }}
                                 loading="eager"
                             />
-                            <span className="fw-bold text-primary">Bazonga</span>
+                            <span className="fw-bold text-primary">Bazonka</span>
                         </Link>
                         <button
                             className="navbar-toggler"
@@ -85,7 +85,7 @@ const GameLayout: React.FC<GameLayoutProps> = ({
             {/* Footer */}
             <footer className="bg-dark text-white py-4 mt-auto" role="contentinfo">
                 <div className="container text-center">
-                    <small className="text-muted">© 2025 Bazonga. All rights reserved.</small>
+                    <small className="text-muted">© 2025 Bazonka. All rights reserved.</small>
                 </div>
             </footer>
         </div>

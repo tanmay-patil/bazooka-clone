@@ -19,10 +19,10 @@ const Tambola: React.FC = () => {
 
     return (
         <GameLayout
-            title="Tambola – Game Rules & Room | Bazonga"
-            description="Understand how to play Tambola on Bazonga and create a private room."
+            title="Tambola – Game Rules & Room | Bazonka"
+            description="Understand how to play Tambola on Bazonka and create a private room."
             ogTitle="Tambola – Game Rules"
-            ogDescription="Read the rules for Tambola and start a room on Bazonga."
+            ogDescription="Read the rules for Tambola and start a room on Bazonka."
         >
             <h1 className="fw-bold text-center mb-4 text-secondary">Tambola – Rules</h1>
             <img

@@ -19,10 +19,10 @@ const TugOfWar: React.FC = () => {
 
     return (
         <GameLayout
-            title="Tug of War – Game Rules & Room | Bazonga"
-            description="Learn how to play Tug of War on Bazonga and create a room to challenge friends."
+            title="Tug of War – Game Rules & Room | Bazonka"
+            description="Learn how to play Tug of War on Bazonka and create a room to challenge friends."
             ogTitle="Tug of War – Game Rules"
-            ogDescription="Read the rules for Tug of War and start a room on Bazonga."
+            ogDescription="Read the rules for Tug of War and start a room on Bazonka."
         >
             <h1 className="fw-bold text-center mb-4 text-secondary">Tug of War – Rules</h1>
             <img

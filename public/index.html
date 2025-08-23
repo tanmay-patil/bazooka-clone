@@ -5,45 +5,25 @@
     <link rel="icon" href="%PUBLIC_URL%/assets/logo_transparent.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Bazonka is a real‑time, collaborative platform for playing fun mini games with friends, family or strangers – no login required and no data stored."
-    />
+    <meta name="description" content="Bazonka is a real‑time, collaborative platform for playing fun mini games with friends, family or strangers – no login required and no data stored." />
     <meta property="og:title" content="Bazonka – Real‑time collaborative mini games platform" />
-    <meta
-      property="og:description"
-      content="Play fun mini games with friends or strangers in real‑time."
-    />
+    <meta property="og:description" content="Play fun mini games with friends or strangers in real‑time." />
     <meta property="og:image" content="%PUBLIC_URL%/assets/logo_transparent.webp" />
     <meta property="og:type" content="website" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/assets/logo_transparent.webp" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     
-    <!-- Preconnect to external domains for faster loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    <link rel="preconnect" href="https://unpkg.com" />
+    <!-- DNS prefetching for performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="//unpkg.com" />
     
-    <!-- Google Fonts: Poppins with font-display swap for better performance -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Critical font loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
     
-    <!-- Preload critical CSS -->
-    <link
-      rel="preload"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-      />
-    </noscript>
+    <!-- Critical CSS with resource hints -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" /></noscript>
     
     <title>Bazonka – Real‑time collaborative mini games platform</title>
   </head>
@@ -51,7 +31,7 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     
-    <!-- Modern JavaScript loading with defer for better performance -->
+    <!-- Optimized script loading -->
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script defer src="https://unpkg.com/scrollreveal"></script>

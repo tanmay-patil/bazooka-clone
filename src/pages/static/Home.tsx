@@ -135,7 +135,7 @@ const Home: React.FC = () => {
             {/* Main content sections */}
             <main className="flex-grow-1" role="main">
                 {/* What is Bazonka */}
-                <section className="py-5 bg-light" role="region">
+                <section className="py-5 bg-light">
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-md-6 mb-4 mb-md-0">
@@ -159,7 +159,7 @@ const Home: React.FC = () => {
                 </section>
 
                 {/* How it works */}
-                <section className="py-5" role="region">
+                <section className="py-5">
                     <div className="container">
                         <div className="row align-items-center flex-column-reverse flex-md-row">
                             <div className="col-md-6">
@@ -183,7 +183,7 @@ const Home: React.FC = () => {
                 </section>
 
                 {/* Privacy features */}
-                <section className="py-5 bg-light" role="region">
+                <section className="py-5 bg-light">
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-md-6 mb-4 mb-md-0">
@@ -207,7 +207,7 @@ const Home: React.FC = () => {
                 </section>
 
                 {/* Simplicity / No Database */}
-                <section className="py-5" role="region">
+                <section className="py-5">
                     <div className="container">
                         <div className="row align-items-center flex-column-reverse flex-md-row">
                             <div className="col-md-6">

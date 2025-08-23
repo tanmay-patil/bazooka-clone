@@ -49,7 +49,7 @@ const Games: React.FC = () => {
             {/* Main content */}
             <main className="flex-grow-1 pt-5 mt-4" role="main">
                 {/* Games section */}
-                <section className="py-5" role="region">
+                <section className="py-5">
                     <div className="container">
                         <h1 className="fw-bold text-center mb-5 text-secondary">Games</h1>
                         <div className="row g-4">

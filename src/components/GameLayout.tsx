@@ -75,7 +75,7 @@ const GameLayout: React.FC<GameLayoutProps> = ({
 
             {/* Main content */}
             <main className="flex-grow-1 pt-5 mt-4" role="main">
-                <section className="py-5" role="region">
+                <section className="py-5">
                     <div className="container text-center">
                         {children}
                     </div>

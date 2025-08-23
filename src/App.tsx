@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import Home from './pages/Home';
-import Games from './pages/Games';
-import PokerNumber from './pages/PokerNumber';
-import Tambola from './pages/Tambola';
-import TapIt from './pages/TapIt';
-import TugOfWar from './pages/TugOfWar';
+import Home from './pages/static/Home';
+import Games from './pages/static/Games';
+import PokerNumber from './pages/static/PokerNumber';
+import Tambola from './pages/static/Tambola';
+import TapIt from './pages/static/TapIt';
+import TugOfWar from './pages/static/TugOfWar';
 
 const App: React.FC = () => {
   return (

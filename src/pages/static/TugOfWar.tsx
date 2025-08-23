@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import GameLayout from '../components/GameLayout';
+import GameLayout from '../../components/GameLayout';
 
 const TugOfWar: React.FC = () => {
     const [roomName, setRoomName] = useState('');

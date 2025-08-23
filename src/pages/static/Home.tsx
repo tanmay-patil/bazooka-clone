@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { useParticles, useScrollReveal, useConfetti } from '../hooks/useAnimations';
-import Toast from '../components/Toast';
-import OptimizedImage from '../components/OptimizedImage';
+import { useParticles, useScrollReveal, useConfetti } from '../../hooks/useAnimations';
+import Toast from '../../components/Toast';
+import OptimizedImage from '../../components/OptimizedImage';
 
 const Home: React.FC = () => {
     const [email, setEmail] = useState('');

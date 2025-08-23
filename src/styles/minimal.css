@@ -1,3 +1,4 @@
+/* Modern CSS for browsers with WebSocket and WebP support */
 /* Minimal custom styles - using Bootstrap utility classes wherever possible */
 
 :root {
@@ -7,9 +8,22 @@
   --bs-secondary-rgb: 76, 42, 134;
 }
 
-/* Only essential custom styles that can't be replaced with Bootstrap */
+/* Global styles and typography */
 body {
-  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-optical-sizing: auto;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+code {
+  font-family: 'SF Mono', ui-monospace, 'Cascadia Code', 'Roboto Mono', 
+    Consolas, 'Courier New', monospace;
+}
+
+.App {
+  text-align: center;
 }
 
 /* Hero gradient background - can't be done with Bootstrap utilities */

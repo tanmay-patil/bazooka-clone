@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet-async';
 import { useParticles, useScrollReveal, useConfetti } from '../hooks/useAnimations';
 import Toast from '../components/Toast';
 import OptimizedImage from '../components/OptimizedImage';
-import '../styles/minimal.css';
 
 const Home: React.FC = () => {
     const [email, setEmail] = useState('');

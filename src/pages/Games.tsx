@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useScrollReveal } from '../hooks/useAnimations';
 import OptimizedImage from '../components/OptimizedImage';
-import '../styles/minimal.css';
 
 const Games: React.FC = () => {
     useScrollReveal();

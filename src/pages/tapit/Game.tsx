@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import CountdownCircle from '../../components/tapit/CountdownCircle';
@@ -30,14 +30,42 @@ const TapItGame: React.FC = () => {
         };
     }, []);
 
-    const handleTap = () => {
+    useEffect(() => {
+        const { body } = document;
+        const originalOverflow = body.style.overflow;
+        body.style.overflow = 'hidden';
+        return () => {
+            body.style.overflow = originalOverflow;
+        };
+    }, []);
+
+    const handleTap = useCallback(() => {
         if (timeLeft > 0) {
             setCount((c) => c + 1);
+        }
+    }, [timeLeft]);
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+        if (e.key === ' ' || e.key === 'Enter') {
+            e.preventDefault();
+            handleTap();
         }
     };
 
     return (
-        <div className="d-flex flex-column min-vh-100 bg-white" onPointerDown={handleTap} role="button">
+        <div
+            className="d-flex flex-column vh-100 overflow-hidden user-select-none"
+            onPointerDown={handleTap}
+            onTouchStart={(e) => e.preventDefault()}
+            onKeyDown={handleKeyDown}
+            role="button"
+            tabIndex={0}
+            aria-label="Tap area"
+            style={{
+                touchAction: 'none',
+                background: 'linear-gradient(135deg, var(--bs-light), var(--bs-white))',
+            }}
+        >
             <Helmet>
                 <title>Tap It – Room {roomName} | Bazonka</title>
             </Helmet>
@@ -45,7 +73,9 @@ const TapItGame: React.FC = () => {
                 <CountdownCircle duration={GAME_DURATION} timeLeft={timeLeft} />
             </div>
             <div className="flex-grow-1 d-flex align-items-center justify-content-center">
-                <span className="display-1 fw-bold user-select-none">{count}</span>
+                <span className="display-1 fw-bold" aria-live="polite" role="status">
+                    {count}
+                </span>
             </div>
         </div>
     );

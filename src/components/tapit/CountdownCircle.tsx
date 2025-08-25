@@ -19,7 +19,15 @@ const CountdownCircle: React.FC<CountdownCircleProps> = ({ duration, timeLeft })
     }
 
     return (
-        <svg width="100" height="100" viewBox="0 0 100 100" className="d-block">
+        <svg
+            width="100"
+            height="100"
+            viewBox="0 0 100 100"
+            className="d-block user-select-none"
+            role="img"
+            aria-label={`${timeLeft} seconds remaining`}
+            aria-live="polite"
+        >
             <circle
                 cx="50"
                 cy="50"
@@ -44,7 +52,7 @@ const CountdownCircle: React.FC<CountdownCircleProps> = ({ duration, timeLeft })
                 x="50"
                 y="55"
                 textAnchor="middle"
-                className="fw-bold"
+                className="fw-bold user-select-none"
                 fontSize="24"
                 fill="var(--bs-dark)"
             >

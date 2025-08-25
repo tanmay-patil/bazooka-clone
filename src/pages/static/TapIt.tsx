@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import GameLayout from '../../components/GameLayout';
 
 const TapIt: React.FC = () => {
     const [roomName, setRoomName] = useState('');
+    const navigate = useNavigate();
 
     const handleEnterRoom = () => {
         if (roomName.trim()) {
-            // TODO: Implement room joining logic
-            // eslint-disable-next-line no-console
-            console.log('Entering room:', roomName);
+            navigate(`/tap-it/game/${encodeURIComponent(roomName)}`);
         }
     };
 

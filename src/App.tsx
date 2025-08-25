@@ -8,6 +8,7 @@ const Games = lazy(() => import("./pages/static/Games"));
 const PokerNumber = lazy(() => import("./pages/static/PokerNumber"));
 const Tambola = lazy(() => import("./pages/static/Tambola"));
 const TapIt = lazy(() => import("./pages/static/TapIt"));
+const TapItGame = lazy(() => import("./pages/tapit/Game"));
 const TugOfWar = lazy(() => import("./pages/static/TugOfWar"));
 
 // Minimal loading component
@@ -33,8 +34,9 @@ const App: React.FC = () => {
               {/* Game pages */}
               <Route path="/pokernumber" element={<PokerNumber />} />
               <Route path="/tambola" element={<Tambola />} />
-              <Route path="/tapit" element={<TapIt />} />
-              <Route path="/tugofwar" element={<TugOfWar />} />
+              <Route path="/tap-it" element={<TapIt />} />
+              <Route path="/tap-it/game/:roomName" element={<TapItGame />} />
+              <Route path="/tug-of-war" element={<TugOfWar />} />
             </Routes>
           </Suspense>
         </div>

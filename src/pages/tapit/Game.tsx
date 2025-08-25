@@ -3,6 +3,15 @@ import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import CountdownCircle from '../../components/tapit/CountdownCircle';
 
+const CONTAINER_STYLE: React.CSSProperties = {
+    touchAction: 'none',
+    background:
+        'radial-gradient(at 0% 0%, rgba(255, 149, 128, 0.35), transparent 60%),' +
+        'radial-gradient(at 100% 0%, rgba(168, 226, 107, 0.35), transparent 60%),' +
+        'radial-gradient(at 100% 100%, rgba(173, 91, 230, 0.35), transparent 60%),' +
+        '#fff',
+};
+
 const GAME_DURATION = 30;
 
 const TapItGame: React.FC = () => {
@@ -61,10 +70,7 @@ const TapItGame: React.FC = () => {
             role="button"
             tabIndex={0}
             aria-label="Tap area"
-            style={{
-                touchAction: 'none',
-                background: 'linear-gradient(135deg, var(--bs-light), var(--bs-white))',
-            }}
+            style={CONTAINER_STYLE}
         >
             <Helmet>
                 <title>Tap It – Room {roomName} | Bazonka</title>

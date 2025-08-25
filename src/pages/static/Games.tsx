@@ -71,7 +71,7 @@ const Games: React.FC = () => {
                                             possible. Most taps wins!
                                         </p>
                                         <Link
-                                            to="/tapit"
+                                            to="/tap-it"
                                             className="btn btn-primary rounded-pill mt-auto"
                                         >
                                             Read Rules & Play

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import GameLayout from '../../components/GameLayout';
+import GameLayout from '../components/GameLayout';
 
 const CreateRoom: React.FC = () => {
     const [step, setStep] = useState<'mode' | 'teams'>('mode');
@@ -20,7 +20,7 @@ const CreateRoom: React.FC = () => {
         if (mode === 'team') {
             setStep('teams');
         } else if (mode === 'individual') {
-            // TODO: integrate with Tap It game route
+            // TODO: integrate with game route
         }
     };
 
@@ -52,15 +52,15 @@ const CreateRoom: React.FC = () => {
     };
 
     const handleTeamsContinue = () => {
-        // TODO: integrate with Tap It team game route
+        // TODO: integrate with team game route
     };
 
     return (
         <GameLayout
-            title="Tap It – Create Room | Bazonka"
-            description="Create a room to play Tap It on Bazonka and choose how you want to compete."
-            ogTitle="Tap It – Create Room"
-            ogDescription="Create a Tap It room and choose individual or team mode."
+            title="Create Room | Bazonka"
+            description="Create a room on Bazonka and choose how you want to compete."
+            ogTitle="Create Room"
+            ogDescription="Create a room and choose individual or team mode."
         >
             {step === 'mode' ? (
                 <div className="reveal" style={{ maxWidth: '40rem', margin: '0 auto' }}>

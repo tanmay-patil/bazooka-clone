@@ -9,7 +9,7 @@ const TapIt: React.FC = () => {
     const handleEnterRoom = (e: React.FormEvent) => {
         e.preventDefault();
         if (roomName.trim()) {
-            navigate('/tap-it/create-room', { state: { roomName } });
+            navigate('/create-room', { state: { roomName } });
         }
     };
 

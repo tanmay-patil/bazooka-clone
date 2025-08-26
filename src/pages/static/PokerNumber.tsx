@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import GameLayout from '../../components/GameLayout';
 
 const PokerNumber: React.FC = () => {
+    const navigate = useNavigate();
     const [roomName, setRoomName] = useState('');
 
-    const handleEnterRoom = () => {
+    const handleEnterRoom = (e: React.FormEvent) => {
+        e.preventDefault();
         if (roomName.trim()) {
-            // TODO: Implement room joining logic
-            // eslint-disable-next-line no-console
-            console.log('Entering room:', roomName);
-        }
-    };
-
-    const handleKeyPress = (e: React.KeyboardEvent) => {
-        if (e.key === 'Enter') {
-            handleEnterRoom();
+            navigate('/create-room', { state: { roomName } });
         }
     };
 
@@ -38,7 +33,7 @@ const PokerNumber: React.FC = () => {
                 <li className="mb-2">The player with the highest number wins the round.</li>
                 <li className="mb-2">Play multiple rounds and keep track of your score.</li>
             </ol>
-            <div className="mx-auto" style={{ maxWidth: '25rem' }}>
+            <form className="mx-auto" style={{ maxWidth: '25rem' }} onSubmit={handleEnterRoom}>
                 <label htmlFor="roomName" className="form-label fw-medium text-secondary">
                     Enter a room name to play
                 </label>
@@ -49,16 +44,16 @@ const PokerNumber: React.FC = () => {
                     placeholder="Room name"
                     value={roomName}
                     onChange={(e) => setRoomName(e.target.value)}
-                    onKeyPress={handleKeyPress}
                 />
                 <button
-                    className="btn btn-primary btn-lg w-100 rounded-pill"
-                    onClick={handleEnterRoom}
+                    type="submit"
+                    className="btn btn-lg w-100 rounded-pill text-white"
+                    style={{ background: 'linear-gradient(90deg, #6c63ff 0%, #17a2b8 100%)' }}
                     disabled={!roomName.trim()}
                 >
                     Enter Room
                 </button>
-            </div>
+            </form>
         </GameLayout>
     );
 };

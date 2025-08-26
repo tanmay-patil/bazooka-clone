@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import GameLayout from '../../components/GameLayout';
 
 const TapIt: React.FC = () => {
     const navigate = useNavigate();
+    const [roomName, setRoomName] = useState('');
 
-    const handleEnterRoom = () => {
-        navigate('/tap-it/create-room');
+    const handleEnterRoom = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (roomName.trim()) {
+            navigate('/tap-it/create-room', { state: { roomName } });
+        }
     };
 
     return (
@@ -28,14 +32,27 @@ const TapIt: React.FC = () => {
                 <li className="mb-2">Everyone taps their side of the screen as fast as possible.</li>
                 <li className="mb-2">The team with the most taps when time runs out wins.</li>
             </ol>
-            <div className="mx-auto" style={{ maxWidth: '25rem' }}>
+            <form className="mx-auto" style={{ maxWidth: '25rem' }} onSubmit={handleEnterRoom}>
+                <label htmlFor="roomName" className="form-label fw-medium text-secondary">
+                    Enter a room name to play
+                </label>
+                <input
+                    type="text"
+                    id="roomName"
+                    className="form-control form-control-lg mb-3 rounded-pill"
+                    placeholder="Room name"
+                    value={roomName}
+                    onChange={(e) => setRoomName(e.target.value)}
+                />
                 <button
-                    className="btn btn-primary btn-lg w-100 rounded-pill"
-                    onClick={handleEnterRoom}
+                    type="submit"
+                    className="btn btn-lg w-100 rounded-pill text-white"
+                    style={{ background: 'linear-gradient(90deg, #6c63ff 0%, #17a2b8 100%)' }}
+                    disabled={!roomName.trim()}
                 >
                     Enter Room
                 </button>
-            </div>
+            </form>
         </GameLayout>
     );
 };

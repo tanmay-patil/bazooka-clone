@@ -5,6 +5,16 @@ const CreateRoom: React.FC = () => {
     const [step, setStep] = useState<'mode' | 'teams'>('mode');
     const [mode, setMode] = useState<'individual' | 'team' | null>(null);
     const [teams, setTeams] = useState<string[]>(['Team 1', 'Team 2']);
+    const [editingIndex, setEditingIndex] = useState<number | null>(null);
+    const [editingName, setEditingName] = useState('');
+
+    const colorPairs: [string, string][] = [
+        ['#6c63ff', '#17a2b8'],
+        ['#ff6f91', '#ff9671'],
+        ['#845ec2', '#ffc75f'],
+        ['#2c98f0', '#a3de83'],
+        ['#f9f871', '#ff6f91'],
+    ];
 
     const handleContinue = () => {
         if (mode === 'team') {
@@ -28,11 +38,17 @@ const CreateRoom: React.FC = () => {
     };
 
     const handleRenameTeam = (index: number) => {
-        const name = window.prompt('Rename team', teams[index]);
-        if (name && name.trim()) {
+        setEditingIndex(index);
+        setEditingName(teams[index]);
+    };
+
+    const handleRenameSave = () => {
+        if (editingIndex !== null && editingName.trim()) {
             const updated = [...teams];
-            updated[index] = name.trim();
+            updated[editingIndex] = editingName.trim();
             setTeams(updated);
+            setEditingIndex(null);
+            setEditingName('');
         }
     };
 
@@ -112,51 +128,42 @@ const CreateRoom: React.FC = () => {
                     />
                     <h2 className="fw-bold text-secondary mb-4 text-center">Teams</h2>
                     <div className="row g-4 mb-4">
-                        {teams.map((team, idx) => (
-                            <div className="col-12 col-sm-6" key={idx}>
-                                <div className="border rounded-3 p-4 h-100 d-flex flex-column align-items-center justify-content-center position-relative">
-                                    <button
-                                        type="button"
-                                        className="btn btn-sm btn-link text-secondary position-absolute top-0 start-0"
-                                        onClick={() => handleRenameTeam(idx)}
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-9.439 9.439-3.854.854a.5.5 0 0 1-.607-.607l.854-3.854L12.146.146zM11.207 2L3 10.207V11h.793L12 2.793 11.207 2z" />
-                                        </svg>
-                                    </button>
-                                    {teams.length > 2 && (
+                        {teams.map((team, idx) => {
+                            const [c1, c2] = colorPairs[idx % colorPairs.length];
+                            return (
+                                <div className="col-12 col-sm-6" key={idx}>
+                                    <div className="border rounded-3 p-4 h-100 d-flex flex-column align-items-center justify-content-center position-relative">
                                         <button
                                             type="button"
-                                            className="btn btn-sm btn-link text-danger position-absolute top-0 end-0"
-                                            onClick={() => handleRemoveTeam(idx)}
+                                            className="btn btn-sm btn-link text-secondary position-absolute top-0 start-0"
+                                            onClick={() => handleRenameTeam(idx)}
                                         >
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="16"
-                                                height="16"
-                                                fill="currentColor"
-                                                viewBox="0 0 16 16"
-                                            >
-                                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                                            </svg>
+                                            <img src="/assets/icon-edit.svg" alt="Edit" width={20} height={20} />
                                         </button>
-                                    )}
-                                    <img
-                                        src="/assets/illustration-team.svg"
-                                        alt="Team"
-                                        className="img-fluid mb-2"
-                                        style={{ maxHeight: '6rem' }}
-                                    />
-                                    <h3 className="h5 fw-medium text-secondary">{team}</h3>
+                                        {teams.length > 2 && (
+                                            <button
+                                                type="button"
+                                                className="btn btn-sm btn-link text-danger position-absolute top-0 end-0"
+                                                onClick={() => handleRemoveTeam(idx)}
+                                            >
+                                                <img src="/assets/icon-delete.svg" alt="Delete" width={20} height={20} />
+                                            </button>
+                                        )}
+                                        <svg
+                                            viewBox="0 0 200 200"
+                                            className="mb-2"
+                                            style={{ maxHeight: '6rem' }}
+                                        >
+                                            <circle cx="60" cy="60" r="40" fill={c1} />
+                                            <rect x="20" y="110" width="80" height="80" fill={c1} />
+                                            <circle cx="140" cy="60" r="40" fill={c2} />
+                                            <rect x="100" y="110" width="80" height="80" fill={c2} />
+                                        </svg>
+                                        <h3 className="h5 fw-medium text-secondary">{team}</h3>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                         {teams.length < 5 && (
                             <div className="col-12 col-sm-6">
                                 <div
@@ -192,6 +199,39 @@ const CreateRoom: React.FC = () => {
                     >
                         Continue
                     </button>
+                </div>
+            )}
+            {editingIndex !== null && (
+                <div className="modal fade show d-block" tabIndex={-1} style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title">Rename Team</h5>
+                                <button type="button" className="btn-close" onClick={() => setEditingIndex(null)} aria-label="Close"></button>
+                            </div>
+                            <div className="modal-body">
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={editingName}
+                                    onChange={(e) => setEditingName(e.target.value)}
+                                />
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" onClick={() => setEditingIndex(null)}>
+                                    Cancel
+                                </button>
+                                <button
+                                    type="button"
+                                    className="btn text-white"
+                                    style={{ background: 'linear-gradient(90deg, #6c63ff 0%, #17a2b8 100%)' }}
+                                    onClick={handleRenameSave}
+                                >
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             )}
         </GameLayout>

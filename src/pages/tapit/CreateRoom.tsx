@@ -21,7 +21,6 @@ const CreateRoom: React.FC = () => {
             setStep('teams');
         } else if (mode === 'individual') {
             // TODO: integrate with Tap It game route
-            console.log('Mode:', mode);
         }
     };
 
@@ -39,7 +38,7 @@ const CreateRoom: React.FC = () => {
 
     const handleRenameTeam = (index: number) => {
         setEditingIndex(index);
-        setEditingName(teams[index]);
+        setEditingName(teams[index] ?? '');
     };
 
     const handleRenameSave = () => {
@@ -54,7 +53,6 @@ const CreateRoom: React.FC = () => {
 
     const handleTeamsContinue = () => {
         // TODO: integrate with Tap It team game route
-        console.log('Teams:', teams);
     };
 
     return (
@@ -129,7 +127,7 @@ const CreateRoom: React.FC = () => {
                     <h2 className="fw-bold text-secondary mb-4 text-center">Teams</h2>
                     <div className="row g-4 mb-4">
                         {teams.map((team, idx) => {
-                            const [c1, c2] = colorPairs[idx % colorPairs.length];
+                            const [c1, c2] = colorPairs[idx % colorPairs.length]!;
                             return (
                                 <div className="col-12 col-sm-6" key={idx}>
                                     <div className="border rounded-3 p-4 h-100 d-flex flex-column align-items-center justify-content-center position-relative">

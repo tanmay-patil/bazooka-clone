@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/Bazoo-ka/web-app/issues"
   },
-  "homepage": "./",
+  "homepage": "/",
   "dependencies": {
     "@microsoft/clarity":"~1.0.0",
     "react": "~19.1.1",
